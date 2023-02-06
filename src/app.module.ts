@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { ConfigModule } from '@nestjs/config';
 import emailConfig from './config/emailConfig';
 import { validationSchema } from './config/validationSchema';
+import { UsersModule } from './users/users.module';
 
 //? CoreModule은 CommonModule을 export하고 있다. 그래서 CoreModule을 import하면 CommonModule 역시 사용할 수 있다.
 
@@ -17,6 +18,7 @@ import { validationSchema } from './config/validationSchema';
       isGlobal: true,
       validationSchema,
     }),
+    UsersModule,
     CoreModule,
   ],
   controllers: [AppController],

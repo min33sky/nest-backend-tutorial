@@ -17,8 +17,8 @@ export class UsersService {
 
     const signupVerifyToken = uuid();
 
-    await this.saveUser(name, email, password, signupVerifyToken);
-    await this.sendMemberJoinEmail(email, signupVerifyToken);
+    // await this.saveUser(name, email, password, signupVerifyToken);
+    // await this.sendMemberJoinEmail(email, signupVerifyToken);
   }
 
   /**
@@ -57,6 +57,16 @@ export class UsersService {
     // 2. 유저 정보를 반환
     throw new Error('Method not implemented.');
   }
+
+  async findOne(userId: number) {
+    return `This action returns a #${userId} user`;
+  }
+
+  async findAll() {
+    return `This action returns all users`;
+  }
+
+  //************************************ Private Methods ******************************************/
 
   private checkUserExists(email: string) {
     return false; //TODO: DB 연동 후 구현
